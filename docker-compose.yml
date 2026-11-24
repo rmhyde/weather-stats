@@ -1,0 +1,12 @@
+services:
+  weather-stats:
+    build: .
+    restart: unless-stopped
+    environment:
+      WEATHER_API_KEY: ${WEATHER_API_KEY:?WEATHER_API_KEY is required}
+      EMONCMS_API_KEY: ${EMONCMS_API_KEY:?EMONCMS_API_KEY is required}
+      EMONCMS_NODE: ${EMONCMS_NODE:?EMONCMS_NODE is required}
+      POSTCODE: ${POSTCODE:?POSTCODE is required}
+      EMONCMS_INPUT_NAME: ${EMONCMS_INPUT_NAME:-temperature}
+      EMONCMS_URL: ${EMONCMS_URL:-https://emoncms.org}
+      POLL_INTERVAL: ${POLL_INTERVAL:-15m}

@@ -1,0 +1,6 @@
+.git
+.env
+.vscode
+weather-stats
+README.md
+docker-compose.yml
